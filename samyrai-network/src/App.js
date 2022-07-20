@@ -14,6 +14,4 @@ function App() {
   );
 }
 export default App;
-//урок 12 закончен
-//first change
-//second change
+//урок 13 закончен
