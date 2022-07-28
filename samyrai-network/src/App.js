@@ -4,6 +4,10 @@ import Header from './components/header/header';
 import Nav from './components/nav/nav';
 import Profile from './components/profile/header_img/profile';
 import Dialogs from "./components/dialogs/dialogs";
+import Music from "./components/music/music";
+import Settings from "./components/settings/settings";
+import { Routes, Route } from "react-router-dom";
+import NotFoundPage from './components/notFoundPage/notFoundPage';
 
 function App() {
     return (
@@ -11,11 +15,16 @@ function App() {
             <Header/>
             <Nav/>
             <div className="app-wrapper-content">
-                <Profile />
+                <Routes>
+                    <Route path='/profile' element={<Profile/>} />
+                    <Route path='/dialogs' element={<Dialogs/>} />
+                    <Route path='/music' element={<Music/>} />
+                    <Route path='/settings' element={<Settings/>} />
+                    <Route path='*' element={<NotFoundPage/>} />
+                </Routes>
             </div>
-            {/*<Profile />*/}
         </div>
     );
 }
 export default App;
-//урок 18 закончен
+//урок 19 закончен
