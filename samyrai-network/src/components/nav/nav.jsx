@@ -1,13 +1,16 @@
 import React from 'react';
 import c from './nav.module.css';
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 const Nav = () => {
+
+    const ActiveLink = ({isActive}) => isActive ? c.active : c.item ;
+
     return (
-        <nav className={c.nav }>
-           <div><Link to='/profile' className={c.active}>Profile</Link></div> 
-            <div><Link to='/dialogs'>Messages</Link></div>
-            <div><Link to='/music'>Music</Link></div>
-            <div><Link to='/settings'>Settings</Link></div>
+        <nav className={c.nav}>
+            <div ><NavLink to='/profile'className = {ActiveLink}>Profile</NavLink></div>
+            <div><NavLink to='/dialogs' className = {ActiveLink}>Messages</NavLink></div>
+            <div><NavLink to='/music' className = {ActiveLink}>Music</NavLink></div>
+            <div><NavLink to='/settings' className = {ActiveLink}>Settings</NavLink></div>
         </nav>
     );
 }

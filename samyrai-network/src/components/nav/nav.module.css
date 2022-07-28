@@ -3,7 +3,15 @@
     background-color: #838996;
     padding: 10%;
     color: white;
+    padding: 20px;
 }
+
+.item  {
+    color: white;
+    text-decoration: none;
+}
+
 .active {
-    color: blue;
+    color: gold;
+    text-decoration: none;
 }
