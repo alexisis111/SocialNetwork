@@ -1,0 +1,8 @@
+.header {
+    grid-area: h;
+    background-color: #838996;
+}
+.header_img {
+    margin: 0 auto;
+    text-align: center;
+}

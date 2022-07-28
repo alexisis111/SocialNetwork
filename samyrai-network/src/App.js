@@ -1,17 +1,21 @@
 import React from 'react';
 import './App.css';
-import Content from './components/content';
-import Header from './components/header';
-import Nav from './components/nav';
+import Header from './components/header/header';
+import Nav from './components/nav/nav';
+import Profile from './components/profile/header_img/profile';
+import Dialogs from "./components/dialogs/dialogs";
 
 function App() {
-  return (
-    <div className="wrapper">
-      <Header />
-      <Nav />
-      <Content />
-    </div>
-  );
+    return (
+        <div className="app-wrapper">
+            <Header/>
+            <Nav/>
+            <div className="app-wrapper-content">
+                <Profile />
+            </div>
+            {/*<Profile />*/}
+        </div>
+    );
 }
 export default App;
-//урок 13 закончен
+//урок 18 закончен
