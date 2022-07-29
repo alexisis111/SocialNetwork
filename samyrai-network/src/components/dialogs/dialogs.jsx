@@ -38,8 +38,8 @@ let MessageData = [
     { id: 3, message: "Wow" }
 ]
 
-let DialogEements = DialogData.map( d => <DialogItem name={d.name} id={d.id} />);
-let MessageElements = MessageData.map( m => <Messages messages={m.message} />);
+let DialogEements = DialogData.map( (d, id) => <DialogItem key={id} name={d.name} id={d.id} />);
+let MessageElements = MessageData.map( (m, id)  => <Messages key={id} messages={m.message} />);
 
 
 function Dialogs() {

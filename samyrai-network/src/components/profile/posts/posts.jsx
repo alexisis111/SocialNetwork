@@ -8,7 +8,7 @@ let PostsData = [
     { message: 'how are you', likesCount: 0 }
 ]
 
-let PostElements = PostsData.map(p => <Post message={p.message} likesCount={p.likesCount} />);
+let PostElements = PostsData.map((p, id) => <Post key={id} message={p.message} likesCount={p.likesCount} />);
 
 const Posts = () => {
     return (
