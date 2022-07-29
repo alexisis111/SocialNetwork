@@ -1,4 +1,12 @@
-.description{
+.description {
     text-align: center;
     padding: 10px;
+}
+
+.description img {
+    display: inline;
+    float: left;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
 }

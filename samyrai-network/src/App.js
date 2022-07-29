@@ -27,4 +27,4 @@ function App() {
     );
 }
 export default App;
-//урок 23 закончен
+//урок 25 закончен
