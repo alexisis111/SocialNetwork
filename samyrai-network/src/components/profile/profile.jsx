@@ -5,12 +5,16 @@ import Posts from './posts/posts';
 
 
 
-const Profile = () => {
+const Profile = (props) => {
+
+    
+
+
     return (
         <div>
             <ProfileImg />
             <Description />
-            <Posts />
+            <Posts PostsData={props.PostsData} />
         </div>
     );
 }
