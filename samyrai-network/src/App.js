@@ -10,15 +10,14 @@ import { Routes, Route } from "react-router-dom";
 import NotFoundPage from './components/notFoundPage/notFoundPage';
 
 function App(props) {
-
     return (
         <div className="app-wrapper">
             <Header />
             <Nav />
             <div className="app-wrapper-content">
                 <Routes>
-                    <Route path='/profile' element={<Profile PostsData={props.PostsData} />} />
-                    <Route path='/dialogs/*' element={<Dialogs DialogData={props.DialogData} MessageData={props.MessageData} />} />
+                    <Route path='/profile' element={<Profile appState={props.appState} />} />
+                    <Route path='/dialogs/*' element={<Dialogs appState={props.appState.dialogsPage}/>} />
                     <Route path='/music' element={<Music />} />
                     <Route path='/settings' element={<Settings />} />
                     <Route path='*' element={<NotFoundPage />} />

@@ -6,15 +6,12 @@ import Posts from './posts/posts';
 
 
 const Profile = (props) => {
-
-    
-
-
+   
     return (
         <div>
             <ProfileImg />
             <Description />
-            <Posts PostsData={props.PostsData} />
+            <Posts posts={props.appState.profilePage.posts} />
         </div>
     );
 }

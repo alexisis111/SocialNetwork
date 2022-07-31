@@ -21,21 +21,17 @@ const Messages = (props) => {
 
 
 function Dialogs(props) {
-
-    let DialogEements = props.DialogData.map((d, id) => <DialogItem key={id} name={d.name} id={d.id} />);
-    let MessageElements = props.MessageData.map((m, id) => <Messages key={id} messages={m.message} />);
+    let DialogEements = props.appState.dialogs.map((d, id) => <DialogItem key={id} name={d.name} id={d.id} />);
+    let MessageElements = props.appState.messages.map((m, id) => <Messages key={id} messages={m.message} />);
 
     return (
         <div >
             <div className={c.dialogs}>
                 <div className={c.dialogs_items}>
-
                     {DialogEements}
-
                 </div>
                 <div className={c.messages}>
                     {MessageElements}
-
                 </div>
             </div>
         </div>
