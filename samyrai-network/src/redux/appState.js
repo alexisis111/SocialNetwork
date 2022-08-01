@@ -27,6 +27,14 @@ let appState = {
             { id: 3, message: "Wow" }
         ]
 
+    },
+    sidebar: {
+        link:[
+            {to: '/profile',link: 'Profile'},
+            {to: '/dialogs',link: 'Messages'},
+            {to: '/music',link: 'Music'},
+            {to: '/settings',link: 'Settings'}
+        ]
     }
 
 

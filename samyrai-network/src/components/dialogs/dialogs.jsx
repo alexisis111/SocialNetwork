@@ -2,8 +2,8 @@ import React from "react";
 import c from './dialogs.module.css';
 import { NavLink } from "react-router-dom";
 
-const DialogItem = (props) => {
 
+const DialogItem = (props) => {
     let path = '/dialogs/' + props.id;
 
     const ActiveLink = ({ isActive }) => isActive ? c.active : c.item;
@@ -21,6 +21,7 @@ const Messages = (props) => {
 
 
 function Dialogs(props) {
+
     let DialogEements = props.appState.dialogs.map((d, id) => <DialogItem key={id} name={d.name} id={d.id} />);
     let MessageElements = props.appState.messages.map((m, id) => <Messages key={id} messages={m.message} />);
 

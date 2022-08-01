@@ -1,16 +1,15 @@
 import React from 'react';
 import c from './nav.module.css';
 import { NavLink } from "react-router-dom";
-const Nav = () => {
+const Nav = (props) => {
 
     const ActiveLink = ({ isActive }) => isActive ? c.active : c.item;
 
+    let linksElements = props.appState.link.map((l, id) => <div key={id}><NavLink to={l.to} className={ActiveLink}>{l.link}</NavLink ></div>)
+
     return (
         <nav className={c.nav}>
-            <div ><NavLink to='/profile' className={ActiveLink}>Profile</NavLink ></div>
-            <div><NavLink to='/dialogs' className={ActiveLink}>Messages</NavLink ></div>
-            <div><NavLink to='/music' className={ActiveLink}>Music</NavLink ></div>
-            <div><NavLink to='/settings' className={ActiveLink}>Settings</NavLink ></div>
+            {linksElements}
         </nav>
     );
 }
