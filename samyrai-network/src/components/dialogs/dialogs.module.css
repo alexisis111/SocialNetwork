@@ -1,11 +1,20 @@
 .dialogs {
     display: grid;
-    grid-template-columns: 2fr 10fr;
+    grid-template-columns: 4fr 8fr;
 }
 
 .dialogs_items {
     padding: 10px;
+    text-align: center;
+
 }
+
+.dialogs_items img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
 
 .dialogs_items a {
     color: white;
@@ -15,10 +24,20 @@
     color: gold;
 }
 
-.dialog {}
+.dialogs {
+    font-size: large;
+}
 
 .messages {
     padding: 10px;
 }
+.messages img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
 
-.message {}
+.message { 
+    padding: 10px;
+}
+

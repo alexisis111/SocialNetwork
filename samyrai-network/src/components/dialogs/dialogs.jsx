@@ -10,26 +10,35 @@ const DialogItem = (props) => {
 
     return (
         <div>
-            <NavLink to={path} className={ActiveLink}>{props.name}</NavLink>
+            <NavLink to={path} className={ActiveLink}>
+                <img src={props.url} alt="" />
+                {props.name}
+            </NavLink>
         </div>
     )
 }
 
 const Messages = (props) => {
-    return <div className={c.message}>{props.messages}</div>
+    return <div className={c.message}>
+        <img src={props.url} alt="" />
+        {props.messages}
+    </div>
 }
+
+
+
 
 
 function Dialogs(props) {
 
-    let DialogEements = props.appState.dialogs.map((d, id) => <DialogItem key={id} name={d.name} id={d.id} />);
-    let MessageElements = props.appState.messages.map((m, id) => <Messages key={id} messages={m.message} />);
+    let DialogElements = props.appState.dialogsPage.dialogs.map((d, id) => <DialogItem key={id} name={d.name} id={d.id} url={d.url} />);
+    let MessageElements = props.appState.dialogsPage.messages.map((m, id) => <Messages key={id} messages={m.message} id={m.id} url={m.url} />);
 
     return (
         <div >
             <div className={c.dialogs}>
                 <div className={c.dialogs_items}>
-                    {DialogEements}
+                    {DialogElements}
                 </div>
                 <div className={c.messages}>
                     {MessageElements}

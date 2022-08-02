@@ -1,12 +1,16 @@
 .description {
-    text-align: center;
-    padding: 10px;
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+    
+    color: white;
+}
+
+.descriptionInfo {
+    margin: 0;
 }
 
 .description img {
-    display: inline;
-    float: left;
     width: 150px;
     height: 150px;
-    border-radius: 50%;
+    padding: 15px;
 }

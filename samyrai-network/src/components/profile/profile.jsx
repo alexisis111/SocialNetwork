@@ -6,10 +6,11 @@ import Posts from './posts/posts';
 
 
 const Profile = (props) => {
+   
     return (
         <div>
             <ProfileImg />
-            <Description />
+            <Description profileImg={props.appState.profileImg[0]} />
             <Posts posts={props.appState.posts} />
         </div>
     );

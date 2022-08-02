@@ -10,7 +10,7 @@ import { Routes, Route } from "react-router-dom";
 import NotFoundPage from './components/notFoundPage/notFoundPage';
 
 function App(props) {
-
+    
     return (
         <div className="app-wrapper">
             <Header />
@@ -18,7 +18,7 @@ function App(props) {
             <div className="app-wrapper-content">
                 <Routes>
                     <Route path='/profile' element={<Profile appState={props.appState.profilePage} />} />
-                    <Route path='/dialogs/*' element={<Dialogs appState={props.appState.dialogsPage}/>} />
+                    <Route path='/dialogs/*' element={<Dialogs appState={props.appState}/>} />
                     <Route path='/music' element={<Music />} />
                     <Route path='/settings' element={<Settings />} />
                     <Route path='*' element={<NotFoundPage />} />

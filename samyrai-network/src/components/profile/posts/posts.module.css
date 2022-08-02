@@ -1,3 +1,9 @@
 .posts {
     padding: 10px;
 }
+.posts textarea {
+    display: block;
+    width: 99%;
+    height: 60px;
+    background-color: rgb(134, 115, 115);
+}

@@ -6,15 +6,23 @@ import c from './posts.module.css';
 
 
 const Posts = (props) => {
+
     let PostElements = props.posts.map((p, id) => <Post key={id} message={p.message} likesCount={p.likesCount} />);
+
+    let newPostElement = React.createRef();
+
+    let addPost = () => {
+        let text = newPostElement.current.value
+        alert(text)
+    }
     return (
         <div className={c.posts}>
             <h1>Posts</h1>
             <div>
-                <textarea name="" id="" ></textarea>
+                <textarea ref={newPostElement}></textarea>
             </div>
             <div>
-                <button>add post</button><button>remove post</button>
+                <button onClick={addPost}>add post</button><button>remove post</button>
             </div>
             {PostElements}
 

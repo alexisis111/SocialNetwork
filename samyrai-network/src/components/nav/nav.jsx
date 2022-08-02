@@ -2,7 +2,7 @@ import React from 'react';
 import c from './nav.module.css';
 import { NavLink } from "react-router-dom";
 const Nav = (props) => {
-
+    debugger
     const ActiveLink = ({ isActive }) => isActive ? c.active : c.item;
 
     let linksElements = props.appState.link.map((l, id) => <div key={id}><NavLink to={l.to} className={ActiveLink}>{l.link}</NavLink ></div>)
