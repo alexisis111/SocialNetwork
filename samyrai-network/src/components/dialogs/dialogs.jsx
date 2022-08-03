@@ -19,9 +19,26 @@ const DialogItem = (props) => {
 }
 
 const Messages = (props) => {
+
     return <div className={c.message}>
         <img src={props.url} alt="" />
         {props.messages}
+        
+    </div>
+}
+
+const SendMessages  = () => {
+    let newDialogElement = React.createRef();
+
+    let addMessage = () => {
+        let text = newDialogElement.current.value
+        alert(text)
+    }
+
+
+    return <div>
+        <textarea ref={newDialogElement}></textarea>
+        <button onClick={addMessage}>Send message</button>
     </div>
 }
 
@@ -31,8 +48,8 @@ const Messages = (props) => {
 
 function Dialogs(props) {
 
-    let DialogElements = props.appState.dialogsPage.dialogs.map((d, id) => <DialogItem key={id} name={d.name} id={d.id} url={d.url} />);
-    let MessageElements = props.appState.dialogsPage.messages.map((m, id) => <Messages key={id} messages={m.message} id={m.id} url={m.url} />);
+    let DialogElements = props.appState.dialogs.map((d, id) => <DialogItem key={id} name={d.name} id={d.id} url={d.url} />);
+    let MessageElements = props.appState.messages.map((m, id) => <Messages key={id} messages={m.message} id={m.id} url={m.url} />);
 
     return (
         <div >
@@ -42,7 +59,9 @@ function Dialogs(props) {
                 </div>
                 <div className={c.messages}>
                     {MessageElements}
+                    <SendMessages />
                 </div>
+                
             </div>
         </div>
     );

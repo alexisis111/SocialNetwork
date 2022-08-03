@@ -11,7 +11,7 @@ const Profile = (props) => {
         <div>
             <ProfileImg />
             <Description profileImg={props.appState.profileImg[0]} />
-            <Posts posts={props.appState.posts} />
+            <Posts posts={props.appState.posts} addPost={props.addPost}/>
         </div>
     );
 }

@@ -1,7 +1,6 @@
 import React from 'react';
 import c from './description.module.css';
 const Description = (props) => {
-    debugger
     return (
         <div className={c.description}>
             <div>
