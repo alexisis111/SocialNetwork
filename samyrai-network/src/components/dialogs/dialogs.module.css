@@ -1,11 +1,10 @@
 .dialogs {
     display: grid;
-    grid-template-columns: 4fr 8fr;
+    grid-template-columns: 2fr 10fr;
 }
 
 .dialogs_items {
     padding: 10px;
-    text-align: center;
 
 }
 
@@ -26,6 +25,13 @@
 
 .dialogs {
     font-size: large;
+}
+
+.dialogs textarea {
+    display: block;
+    width: 99%;
+    height: 60px;
+    background-color: rgb(134, 115, 115);
 }
 
 .messages {
