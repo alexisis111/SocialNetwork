@@ -2,7 +2,7 @@ import React from "react";
 
 
 const InputMessageUpdate = (props) => {
-    debugger
+
     let newDialogElement = React.createRef();
 
     let addMessage = () => {

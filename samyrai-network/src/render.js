@@ -8,7 +8,7 @@ import { addMessage, addPost,  updateMessageText,  updatePostText } from "./redu
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 export let rerenderEntireTree = (appState) => {
-    
+  
     root.render(
         <BrowserRouter>
             <App appState={appState} addPost={addPost}  addMessage={addMessage} updatePostText ={updatePostText} updateMessageText={updateMessageText} />
