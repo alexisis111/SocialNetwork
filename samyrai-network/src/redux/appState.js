@@ -1,7 +1,6 @@
 import rerenderEntireTree from "../render";
 
 let appState = {
-
     profilePage: {
         profileImg: [
             { url: 'https://sun9-west.userapi.com/sun9-8/s/v1/ig2/fvg1qRJlxX9y7AkO3d6ltEluiV4EK9gtS1Qoia2oqhEPog_lC95lsTw4vaqD_TYt2mkT63rLZBeN1wDvcCI3L-XY.jpg?size=200x200&quality=96&crop=2,2,534,534&ava=1' }
@@ -10,7 +9,8 @@ let appState = {
             { id: 1, message: 'hey hey hey', likesCount: 6 },
             { id: 2, message: 'hello', likesCount: 44 },
             { id: 3, message: 'how are you', likesCount: 0 }
-        ]
+        ],
+        newPostText: ''
 
     },
     dialogsPage: {
@@ -28,7 +28,8 @@ let appState = {
                 { id: 1, message: "Hi", url: 'https://sun9-north.userapi.com/sun9-77/s/v1/ig2/-pfpFM7XJ6ta9NVbNQyh7Zu_PcsIAQq7pNOqjQlYqFkT7Q1tZKRyEuspaLKqHAZacWhbAL3aotT9l2U7fikoLN23.jpg?size=200x200&quality=96&crop=3,3,794,794&ava=1' },
                 { id: 2, message: "Yo", url: 'https://sun9-east.userapi.com/sun9-59/s/v1/ig2/hXFDsNVZbPidK8eJMHqQ_cKr8e0jiGak57ejnwiQNav1MWUR-ugX2sRVrqvTqZ4EOIZ02ZA_dg9bygjkeS1LtVL2.jpg?size=200x200&quality=96&crop=143,160,1412,1412&ava=1' },
                 { id: 3, message: "Wow", url: 'https://sun9-west.userapi.com/sun9-47/s/v1/ig2/bH1Fl41zOmCN4Xw9nA-_TxlgTuIZb2zsGCr5TbUlOXVXoC1eQJxVYWMcuyN6jcquK8v24j5QJ_EOiYhbW0xXefov.jpg?size=200x200&quality=95&crop=0,210,593,593&ava=1' }
-            ]
+            ],
+        newMessageText: ''
 
     },
     sidebar: {
@@ -42,27 +43,47 @@ let appState = {
 
 }
 
-export let addPost = (postMessage) => {
-    
+window.appState = appState
+
+export let addPost = () => {
+
     let newPost = {
         id: 5,
-        message: postMessage,
+        message: appState.profilePage.newPostText,
         likesCount: 0
     }
     appState.profilePage.posts.push(newPost);
+    appState.profilePage.newPostText = ''
     rerenderEntireTree(appState);
+
+
+}
+export let updatePostText = (newText) => {
+
+    appState.profilePage.newPostText = newText
+    rerenderEntireTree(appState);
+
 
 }
 
-export let addMessage = (newMessage) => {
+export let addMessage = () => {
 
     let newMessages = {
         id: 4,
-        message: newMessage,
+        message: appState.dialogsPage.newMessageText,
         url: 'https://sun9-north.userapi.com/sun9-81/s/v1/ig2/da6_C7DqFIfkuKMp6mfFdonyILAY7HLYqdw4Y9MJmH2mZGVCwQuHCGzHOeqkbVnIKf1BBM95uA89Zqx_vISWABKH.jpg?size=200x200&quality=96&crop=463,32,490,490&ava=1'
     }
     appState.dialogsPage.messages.push(newMessages);
+    appState.dialogsPage.newMessageText = ''
     rerenderEntireTree(appState);
 }
+
+export let updateMessageText = (newText) => {
+    appState.dialogsPage.newMessageText = newText
+    rerenderEntireTree(appState);
+
+
+}
+
 
 export default appState;

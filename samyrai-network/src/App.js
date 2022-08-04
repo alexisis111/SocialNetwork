@@ -3,7 +3,7 @@ import './App.css';
 import Header from './components/header/header';
 import Nav from './components/nav/nav';
 import Profile from './components/profile/profile';
-import Dialogs from "./components/dialogs/dialogs";
+import DialogsPage from "./components/dialogs/dialogsPage";
 import Music from "./components/music/music";
 import Settings from "./components/settings/settings";
 import { Routes, Route } from "react-router-dom";
@@ -17,8 +17,8 @@ function App(props) {
             <Nav  appState={props.appState.sidebar} />
             <div className="app-wrapper-content">
                 <Routes>
-                    <Route path='/profile' element={<Profile appState={props.appState.profilePage} addPost={props.addPost} />} />
-                    <Route path='/dialogs/*' element={<Dialogs appState={props.appState.dialogsPage} addMessage={props.addMessage}/>} />
+                    <Route path='/profile' element={<Profile appState={props.appState.profilePage} addPost={props.addPost} updatePostText={props.updatePostText} />} />
+                    <Route path='/dialogs/*' element={<DialogsPage appState={props.appState.dialogsPage} addMessage={props.addMessage} updateMessageText={props.updateMessageText} />} />
                     <Route path='/music' element={<Music />} />
                     <Route path='/settings' element={<Settings />} />
                     <Route path='*' element={<NotFoundPage />} />
