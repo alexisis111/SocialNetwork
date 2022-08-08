@@ -40,14 +40,21 @@ let store = {
             ]
         }
     },
-    getState() {
-        
-        return this._appState
-    },
     _callSubsciber() {
         console.log('change appState')
     },
-    addPost() {
+
+
+    getState() {
+
+        return this._appState
+    },
+    subscribe(observer) {
+        this._callSubsciber = observer;
+    },
+
+
+    _addPost() {
         let newPost = {
             id: 5,
             message: this._appState.profilePage.newPostText,
@@ -55,16 +62,16 @@ let store = {
         }
         this._appState.profilePage.posts.push(newPost);
         this._appState.profilePage.newPostText = ''
-        this._callSubsciber( this._appState);
+        this._callSubsciber(this._appState);
 
 
     },
-    updatePostText(newText) {
+    _updatePostText(newText) {
 
         this._appState.profilePage.newPostText = newText
-        this._callSubsciber( this._appState);
+        this._callSubsciber(this._appState);
     },
-    addMessage() {
+    _addMessage() {
 
         let newMessages = {
             id: 4,
@@ -73,17 +80,30 @@ let store = {
         }
         this._appState.dialogsPage.messages.push(newMessages);
         this._appState.dialogsPage.newMessageText = ''
-        this._callSubsciber( this._appState);
+        this._callSubsciber(this._appState);
     },
-    updateMessageText(newText) {
+    _updateMessageText(newText) {
         this._appState.dialogsPage.newMessageText = newText
-        this._callSubsciber( this._appState);
+        this._callSubsciber(this._appState);
 
 
     },
-    subscribe(observer) {
-        this._callSubsciber = observer;
+
+
+    dispatch(action) {
+        if (action.type === 'ADD-POST') {
+            this._addPost()
+        } else if (action.type === 'UPDATE-POST-TEXT') {
+            this._updatePostText(action.newText)
+        }
+         else if (action.type === 'ADD-MESSAGE') {
+            this._addMessage()
+        }
+        else if (action.type === 'UPDATE-MESSAGE-TEXT') {
+            this._updateMessageText(action.newText)
+        }
     }
+
 }
 window.store = store
 export default store;

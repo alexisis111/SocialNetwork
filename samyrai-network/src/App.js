@@ -17,8 +17,9 @@ function App(props) {
             <Nav  appState={props.appState.sidebar} />
             <div className="app-wrapper-content">
                 <Routes>
-                    <Route path='/profile' element={<Profile appState={props.appState.profilePage} addPost={props.addPost} updatePostText={props.updatePostText} />} />
-                    <Route path='/dialogs/*' element={<DialogsPage appState={props.appState.dialogsPage} addMessage={props.addMessage} updateMessageText={props.updateMessageText} />} />
+                    <Route path='/profile' 
+                    element={<Profile appState={props.appState.profilePage} dispatch={props.dispatch}  />} />
+                    <Route path='/dialogs/*' element={<DialogsPage appState={props.appState.dialogsPage} dispatch={props.dispatch}/>} />
                     <Route path='/music' element={<Music />} />
                     <Route path='/settings' element={<Settings />} />
                     <Route path='*' element={<NotFoundPage />} />
@@ -28,4 +29,4 @@ function App(props) {
     );
 }
 export default App;
-//урок 25 закончен
+//урок 38 закончен, dispatch - action

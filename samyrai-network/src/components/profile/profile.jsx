@@ -6,12 +6,12 @@ import Posts from './posts/posts';
 
 
 const Profile = (props) => {
- 
+
     return (
         <div>
             <ProfileImg />
             <Description profileImg={props.appState.profileImg[0]} />
-            <Posts posts={props.appState.posts} addPost={props.addPost} newPostText={props.appState.newPostText} updatePostText={props.updatePostText} />
+            <Posts posts={props.appState.posts} addPost={props.addPost} newPostText={props.appState.newPostText} dispatch={props.dispatch} />
         </div>
     );
 }

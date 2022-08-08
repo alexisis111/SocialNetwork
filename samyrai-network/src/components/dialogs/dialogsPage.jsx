@@ -20,7 +20,7 @@ function DialogsPage(props) {
                 </div>
                 <div className={c.messages}>
                     {MessageElements}
-                    <InputMessageUpdate addMessage={props.addMessage} updateMessageText={props.updateMessageText} newMessageText={props.appState.newMessageText}/>
+                    <InputMessageUpdate addMessage={props.addMessage} dispatch={props.dispatch}newMessageText={props.appState.newMessageText}/>
                 </div>
                 
             </div>

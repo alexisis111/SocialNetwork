@@ -6,18 +6,21 @@ import c from './posts.module.css';
 
 
 const Posts = (props) => {
- 
+    
     let PostElements = props.posts.map((p, id) => <Post key={id} message={p.message} likesCount={p.likesCount} />);
 
     let newPostElement = React.createRef();
 
     let addPost = () => {
-        props.addPost()
+        //props.addPost()
+        props.dispatch({ type: 'ADD-POST' })
     }
 
     let onPostChange = () => {
         let text = newPostElement.current.value
-        props.updatePostText(text);
+        //props.updatePostText(text);
+        let action = { type: 'UPDATE-POST-TEXT', newText: text }
+        props.dispatch(action)
     }
 
 

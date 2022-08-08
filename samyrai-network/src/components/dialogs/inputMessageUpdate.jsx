@@ -6,13 +6,15 @@ const InputMessageUpdate = (props) => {
     let newDialogElement = React.createRef();
 
     let addMessage = () => {
-        props.addMessage()
+        //props.addMessage()
+        props.dispatch({ type: 'ADD-MESSAGE' })
 
     }
 
     let onMessageChange = () => {
         let text = newDialogElement.current.value
-        props.updateMessageText(text);
+        let action = { type: 'UPDATE-MESSAGE-TEXT', newText: text }
+        props.dispatch(action)
 
     }
 

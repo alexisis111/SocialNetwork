@@ -13,10 +13,7 @@ let rerenderEntireTree = (_appState) => {
     root.render(
         <BrowserRouter>
             <App appState={store.getState()}
-                addPost={store.addPost.bind(store)}
-                addMessage={store.addMessage.bind(store)}
-                updatePostText={store.updatePostText.bind(store)}
-                updateMessageText={store.updateMessageText.bind(store)} />
+                dispatch={store.dispatch.bind(store)} />
         </BrowserRouter>
     );
 }
