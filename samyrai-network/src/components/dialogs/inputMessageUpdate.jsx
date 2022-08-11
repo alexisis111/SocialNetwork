@@ -1,5 +1,5 @@
 import React from "react";
-
+import { addMessageActionCreator, onMessageChangeActionCreator } from "../../redux/reducer/dialogsPageReducer"
 
 const InputMessageUpdate = (props) => {
 
@@ -7,13 +7,13 @@ const InputMessageUpdate = (props) => {
 
     let addMessage = () => {
         //props.addMessage()
-        props.dispatch({ type: 'ADD-MESSAGE' })
+        props.dispatch(addMessageActionCreator())
 
     }
 
-    let onMessageChange = () => {
-        let text = newDialogElement.current.value
-        let action = { type: 'UPDATE-MESSAGE-TEXT', newText: text }
+    let onMessageChange = (e) => {
+        let text = e.target.value
+        let action = onMessageChangeActionCreator(text)
         props.dispatch(action)
 
     }

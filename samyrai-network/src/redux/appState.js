@@ -1,3 +1,7 @@
+import DialogsPageReducer from "./reducer/dialogsPageReducer"
+import ProfilePageReducer from "./reducer/profilePageReducer"
+
+
 let store = {
     _appState: {
         profilePage: {
@@ -53,57 +57,13 @@ let store = {
         this._callSubsciber = observer;
     },
 
-
-    _addPost() {
-        let newPost = {
-            id: 5,
-            message: this._appState.profilePage.newPostText,
-            likesCount: 0
-        }
-        this._appState.profilePage.posts.push(newPost);
-        this._appState.profilePage.newPostText = ''
-        this._callSubsciber(this._appState);
-
-
-    },
-    _updatePostText(newText) {
-
-        this._appState.profilePage.newPostText = newText
-        this._callSubsciber(this._appState);
-    },
-    _addMessage() {
-
-        let newMessages = {
-            id: 4,
-            message: this._appState.dialogsPage.newMessageText,
-            url: 'https://sun9-north.userapi.com/sun9-81/s/v1/ig2/da6_C7DqFIfkuKMp6mfFdonyILAY7HLYqdw4Y9MJmH2mZGVCwQuHCGzHOeqkbVnIKf1BBM95uA89Zqx_vISWABKH.jpg?size=200x200&quality=96&crop=463,32,490,490&ava=1'
-        }
-        this._appState.dialogsPage.messages.push(newMessages);
-        this._appState.dialogsPage.newMessageText = ''
-        this._callSubsciber(this._appState);
-    },
-    _updateMessageText(newText) {
-        this._appState.dialogsPage.newMessageText = newText
-        this._callSubsciber(this._appState);
-
-
-    },
-
-
     dispatch(action) {
-        if (action.type === 'ADD-POST') {
-            this._addPost()
-        } else if (action.type === 'UPDATE-POST-TEXT') {
-            this._updatePostText(action.newText)
-        }
-         else if (action.type === 'ADD-MESSAGE') {
-            this._addMessage()
-        }
-        else if (action.type === 'UPDATE-MESSAGE-TEXT') {
-            this._updateMessageText(action.newText)
-        }
+        this._appState.profilePage = ProfilePageReducer( this._appState.profilePage, action)
+        this._appState.dialogsPage = DialogsPageReducer( this._appState.dialogsPage, action)
+        this._callSubsciber(this._appState);
     }
-
 }
+
+
 window.store = store
 export default store;
