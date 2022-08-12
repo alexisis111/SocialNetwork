@@ -29,4 +29,4 @@ function App(props) {
     );
 }
 export default App;
-//урок 38 закончен, dispatch - action
+//урок 42 закончен
