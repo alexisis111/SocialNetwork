@@ -1,16 +1,28 @@
 import React from 'react';
 import c from './nav.module.css';
 import { NavLink } from "react-router-dom";
-const Nav = (props) => {
+import StoreContext from '../../storeContext';
+const Nav = () => {
 
-    const ActiveLink = ({ isActive }) => isActive ? c.active : c.item;
-
-    let linksElements = props.appState.link.map((l, id) => <div key={id}><NavLink to={l.to} className={ActiveLink}>{l.link}</NavLink ></div>)
-
+   
     return (
-        <nav className={c.nav}>
-            {linksElements}
-        </nav>
+        <StoreContext.Consumer>
+            {
+                (store) => {
+
+                    let state = store.getState();
+
+                    const ActiveLink = ({ isActive }) => isActive ? c.active : c.item;
+
+                    let linksElements = state.sidebar.link.map((l, id) => <div key={id}><NavLink to={l.to} className={ActiveLink}>{l.link}</NavLink ></div>)
+                
+
+                    return <nav className={c.nav}>
+                        {linksElements}
+                    </nav>
+                }
+            }
+        </StoreContext.Consumer>
     );
 }
 

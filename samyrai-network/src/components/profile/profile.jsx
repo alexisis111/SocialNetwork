@@ -9,8 +9,8 @@ const Profile = (props) => {
     return (
         <div>
             <ProfileImg />
-            <Description store={props.store}/>
-            <PostsContainer store={props.store} />
+            <Description />
+            <PostsContainer />
         </div>
     );
 }

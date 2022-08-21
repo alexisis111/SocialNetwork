@@ -9,17 +9,16 @@ import Settings from "./components/settings/settings";
 import { Routes, Route } from "react-router-dom";
 import NotFoundPage from './components/notFoundPage/notFoundPage';
 
-function App(props) {
-
+function App() {
+    
     return (
         <div className="app-wrapper">
             <Header />
-            <Nav  appState={props.appState.sidebar} />
+            <Nav  />
             <div className="app-wrapper-content">
                 <Routes>
-                    <Route path='/profile' 
-                    element={<Profile store={props.store} />} />
-                    <Route path='/dialogs/*' element={<DialogsPage store={props.store}/>} />
+                    <Route path='/profile' element={<Profile />} />
+                    <Route path='/dialogs/*' element={<DialogsPage />} />
                     <Route path='/music' element={<Music />} />
                     <Route path='/settings' element={<Settings />} />
                     <Route path='*' element={<NotFoundPage />} />
@@ -29,5 +28,5 @@ function App(props) {
     );
 }
 export default App;
-//урок 43 закончен, контейнерные компоненты
+//урок 44 закончен, conext API, ошибка render не смог решить, оставляю на потом
 
