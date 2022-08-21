@@ -1,17 +1,16 @@
 import React from 'react';
 import Description from './profileInfo/description/description';
 import ProfileImg from "./profileInfo/profileImg/profileImg";
-import Posts from './posts/posts';
+import PostsContainer from './posts/postsContainer';
 
 
 
 const Profile = (props) => {
-
     return (
         <div>
             <ProfileImg />
-            <Description profileImg={props.appState.profileImg[0]} />
-            <Posts posts={props.appState.posts} addPost={props.addPost} newPostText={props.appState.newPostText} dispatch={props.dispatch} />
+            <Description store={props.store}/>
+            <PostsContainer store={props.store} />
         </div>
     );
 }

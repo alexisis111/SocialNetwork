@@ -1,10 +1,11 @@
 import React from 'react';
 import c from './description.module.css';
 const Description = (props) => {
+    let state = props.store.getState().profilePage;
     return (
         <div className={c.description}>
             <div>
-                <img src={props.profileImg.url} alt="" />
+                <img src={state.profileImg[0].url} alt="" />
             </div>
             <div className={c.descriptionInfo}>
                 <h3>Alex Gilev</h3>

@@ -18,8 +18,8 @@ function App(props) {
             <div className="app-wrapper-content">
                 <Routes>
                     <Route path='/profile' 
-                    element={<Profile appState={props.appState.profilePage} dispatch={props.dispatch}  />} />
-                    <Route path='/dialogs/*' element={<DialogsPage appState={props.appState.dialogsPage} dispatch={props.dispatch}/>} />
+                    element={<Profile store={props.store} />} />
+                    <Route path='/dialogs/*' element={<DialogsPage store={props.store}/>} />
                     <Route path='/music' element={<Music />} />
                     <Route path='/settings' element={<Settings />} />
                     <Route path='*' element={<NotFoundPage />} />
@@ -29,5 +29,5 @@ function App(props) {
     );
 }
 export default App;
-//урок 42 закончен, исправил ошибку гит
+//урок 43 закончен, контейнерные компоненты
 

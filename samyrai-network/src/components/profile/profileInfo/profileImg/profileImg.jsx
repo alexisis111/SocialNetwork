@@ -1,5 +1,6 @@
 import React from 'react';
-import c from './profileImg.module.css';
+import 
+c from './profileImg.module.css';
 
 const ProfileImg = () => {
     return (

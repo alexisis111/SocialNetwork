@@ -8,17 +8,21 @@ import store from './redux/redux-store';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-let rerenderEntireTree = () => {
+let rerenderEntireTree = (state) => {
+
     root.render(
         <BrowserRouter>
             <App appState={store.getState()}
-                dispatch={store.dispatch.bind(store)} />
+                dispatch={store.dispatch.bind(store)}
+                store={store}
+            />
         </BrowserRouter>
     );
 }
 rerenderEntireTree(store.getState());
 
 store.subscribe(() => {
+
     let state = store.getState()
     rerenderEntireTree(state)
 });
