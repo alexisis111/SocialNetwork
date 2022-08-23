@@ -10,6 +10,7 @@ let initialState = {
 }
 
 const SidebarReducer = (state = initialState) => {
+
     return state
 }
 
