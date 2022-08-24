@@ -5,7 +5,6 @@ import Messages from './Messages';
 
 
 const Dialogs = (props) => {
-debugger
     let DialogElements = props.dialogs.map((d, id) => <DialogItem key={id} name={d.name} id={d.id} url={d.url} />);
     let MessageElements = props.messages.map((m, id) => <Messages key={id} messages={m.message} id={m.id} url={m.url} />);
 
@@ -31,18 +30,18 @@ debugger
                 </div>
                 <div className={c.messages}>
                     {MessageElements}
+                    <div>
+                        <textarea
+                            onChange={onMessageChange}
+                            ref={newDialogElement}
+                            value={props.newMessageText}>
+                        </textarea>
+                        <div>
+                            <button onClick={onAddMessage}>Send message</button>
+                        </div>
+                    </div>
                 </div>
 
-            </div>
-            <div>
-                <textarea
-                    onChange={onMessageChange}
-                    ref={newDialogElement}
-                    value={props.newMessageText}>
-                </textarea>
-                <div>
-                    <button onClick={onAddMessage}>Send message</button>
-                </div>
             </div>
         </>
     )

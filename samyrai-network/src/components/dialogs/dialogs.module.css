@@ -47,3 +47,8 @@
     padding: 10px;
 }
 
+.inputMessages {
+    width: 99%;
+    height: 60px;
+    background-color: rgb(134, 115, 115);
+}

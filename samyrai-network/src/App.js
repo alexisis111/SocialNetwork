@@ -28,5 +28,5 @@ function App() {
     );
 }
 export default App;
-//урок 45 закончен
+//урок 47 закончен, ...state
 
