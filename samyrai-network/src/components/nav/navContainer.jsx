@@ -3,7 +3,6 @@ import Nav from './nav';
 
 
 const mapStateToProps = (state) => {
-
     return {
         sidebar: state.sidebar
     }

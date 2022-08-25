@@ -4,6 +4,7 @@ let initialState = {
         { to: '/profile', link: 'Profile' },
         { to: '/dialogs', link: 'Messages' },
         { to: '/music', link: 'Music' },
+        { to: '/users', link: 'Users' },
         { to: '/settings', link: 'Settings' }
     ]
 

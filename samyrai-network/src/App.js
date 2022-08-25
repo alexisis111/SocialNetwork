@@ -8,6 +8,7 @@ import { Routes, Route } from "react-router-dom";
 import NotFoundPage from './components/notFoundPage/notFoundPage';
 import NavContainer from './components/nav/navContainer';
 import DialogsContainer from './components/dialogs/dialogsContainer';
+import UsersContainer from './components/users/usersContainer';
 
 function App() {
     
@@ -21,7 +22,7 @@ function App() {
                     <Route path='/dialogs/*' element={<DialogsContainer />} />
                     <Route path='/music' element={<Music />} />
                     <Route path='/settings' element={<Settings />} />
-                    <Route path='/users' element={<div>user</div>} />
+                    <Route path='/users' element={<UsersContainer />} />
                     <Route path='*' element={<NotFoundPage />} />
                 </Routes>
             </div>
