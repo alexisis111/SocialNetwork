@@ -27,20 +27,18 @@ const DialogsPageReducer = (state = initialState, action) => {
                 message: state.newMessageText,
                 url: 'https://sun9-north.userapi.com/sun9-81/s/v1/ig2/da6_C7DqFIfkuKMp6mfFdonyILAY7HLYqdw4Y9MJmH2mZGVCwQuHCGzHOeqkbVnIKf1BBM95uA89Zqx_vISWABKH.jpg?size=200x200&quality=96&crop=463,32,490,490&ava=1'
             }
-            let stateCopy = {
+            return {
                 ...state,
-                ...state.messages
+                newMessageText: '',
+                messages: [...state.messages, newMessages]
+
             }
-            stateCopy.messages.push(newMessages);
-            stateCopy.newMessageText = ''
-            return stateCopy
         }
         case ON_MESSAGE_CHANGE: {
-            let stateCopy = {
-                ...state
+            return {
+                ...state,
+                newMessageText: action.newText
             }
-            stateCopy.newMessageText = action.newText
-            return stateCopy
         }
         default:
             return state

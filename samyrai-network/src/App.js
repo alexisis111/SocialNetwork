@@ -21,6 +21,7 @@ function App() {
                     <Route path='/dialogs/*' element={<DialogsContainer />} />
                     <Route path='/music' element={<Music />} />
                     <Route path='/settings' element={<Settings />} />
+                    <Route path='/users' element={<div>user</div>} />
                     <Route path='*' element={<NotFoundPage />} />
                 </Routes>
             </div>
@@ -28,5 +29,5 @@ function App() {
     );
 }
 export default App;
-//урок 47 закончен, ...state
+//урок 48 закончен, ...state
 
