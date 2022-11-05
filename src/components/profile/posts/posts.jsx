@@ -1,14 +1,30 @@
 import React from 'react';
 import Post from './post/post';
 import c from './posts.module.css';
+import axios from "axios";
 
 
 
 
 
 const Posts = (props) => {
-    let PostElements = props.posts.map((p, id) => <Post key={p.id} message={p.message} likesCount={p.likesCount} />);
+    if (props.posts.length === 0) {
+        axios.get('https://jsonplaceholder.typicode.com/albums/1/photos')
+            .then(response => {
+                props.setPosts(response.data)
 
+            });
+    }
+    debugger
+    let postData = props.posts.map((post) =>
+        <div className={c.title}>
+            {post.id}
+            <div className={c.body}>
+                <img src={post.thumbnailUrl} alt="" />
+            </div>
+            {post.title}
+
+        </div>)
     let newPostElement = React.createRef();
 
     let onAddPost = () => {
@@ -26,7 +42,7 @@ const Posts = (props) => {
         <div className={c.posts}>
             <h1>Posts</h1>
             <div>
-                <textarea
+                <textarea placeholder="Ваше сообщение"
                     onChange={onPostChange}
                     ref={newPostElement}
                     value={props.newPostText}>
@@ -35,7 +51,8 @@ const Posts = (props) => {
             <div>
                 <button onClick={onAddPost}>add post</button>
             </div>
-            {PostElements}
+            <Post posts={props.posts} />
+            {postData}
         </div>
     );
 }
