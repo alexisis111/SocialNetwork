@@ -1,0 +1,15 @@
+.posts {
+    padding: 10px;
+}
+.posts textarea {
+    display: block;
+    width: 99%;
+    height: 60px;
+    
+}
+.title {
+    font-size: 22px;
+}
+.body {
+    font-size: 18px;
+}

@@ -1,0 +1,16 @@
+.description {
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+    
+    color: white;
+}
+
+.descriptionInfo {
+    margin: 0;
+}
+
+.description img {
+    width: 150px;
+    height: 150px;
+    padding: 15px;
+}

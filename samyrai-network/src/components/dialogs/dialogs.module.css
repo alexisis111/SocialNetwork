@@ -1,0 +1,54 @@
+.dialogs {
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+}
+
+.dialogs_items {
+    padding: 10px;
+
+}
+
+.dialogs_items img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+
+.dialogs_items a {
+    color: white;
+}
+
+.dialogs_items .active {
+    color: gold;
+}
+
+.dialogs {
+    font-size: large;
+}
+
+.dialogs textarea {
+    display: block;
+    width: 99%;
+    height: 60px;
+    background-color: rgb(134, 115, 115);
+}
+
+.messages {
+    padding: 10px;
+}
+.messages img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.message { 
+    padding: 10px;
+}
+
+.inputMessages {
+    width: 99%;
+    height: 60px;
+    background-color: rgb(134, 115, 115);
+}
